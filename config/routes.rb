@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'recruits/index'
+
   get 'login' => 'sessions#new'
   post 'lonin' => 'sessios#create'
   delete 'logput' => 'sessions#destroy'
