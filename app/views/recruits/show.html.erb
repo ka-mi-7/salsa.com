@@ -1,0 +1,86 @@
+<div class="teams-new">
+  <div class="row">
+    <div class="col mt-4">
+      <%= link_to root_path do %>
+        <button class="float-right mr-3 bg-info btn btn-info">TOPに戻る</button>
+      <% end %>
+    </div>
+  </div>
+  <div class="text-center mx-auto bg-primary py-2 shadow col-3 rounded mt-4">
+    <h1 class="pt-2">対戦相手DATA</h1>
+  </div>
+    <div class="container">
+      <div class="col-md-5 mt-4 mr-5 text-white">
+        <h2 class="p-3">・チーム名</h2>
+          <h4 class="pl-5 mb-5"><%= @recruit.team.name %></h4>
+        <h2 class="p-3">・日時</h2>
+          <p class="pl-5 mb-5"><%= @recruit.start_at.strftime("%Y/%m/%d %H:%M") %> ~ <%= @recruit.end_at.strftime("%H:%M")%></p>
+        <h2 class="p-3">・エリア</h2>
+          <p class="pl-5 mb-5"><%= @recruit.prefecture %><%= @recruit.address %></p>
+        <h2 class="p-3">・チームレベル</h2>
+          <p class="pl-5 mb-5"><%= @recruit.level_type.times do %>★<% end  %></p>
+        <h2 class="p-3">・コメント</h2>
+          <p class="pl-5 mb-5"><%= @recruit.comment %></p>
+      </div>
+        <div class="col-md-5">
+          <%= image_tag(@recruit.team.image_url, width:'300px') if @recruit.team.image? %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-4 text-center">
+        <% if current_team.present? && current_team.requests.find_by(recruit: @recruit).present? %>
+          <div class="alart alart-danger text-center" role="alart">応募済み</div>
+        <% elsef current_team.present? && current_team != @recruit.team %>
+          <%= link_to recruit_requests_path(@recruit), method: "post" do %>
+            <button type="submit" class="btn btn-primary col-md-4 mt-3 l-3">応募する</button>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-4">
+      </div>
+    <div class="container">
+      <div class="row">
+        <h2 class="col-6 text-center mt-4 bg-info text-white">このチームに応募しているチーム</h2>
+      </div>
+      <table class="table mt-4 table-secondary">
+        <thead class="thead-secondary">
+          <tr>
+            <th scape="col">チーム名</th>
+            <th scape="col">レベル</th>
+            <th scape="col">ステータス</th>
+            <% if @rectuit.team == curremt_team %>
+              <th></th>
+            <% end %>  
+          </tr>
+        </thead>
+          <% @recruits.each do |request| %>
+            <tr>
+              <td>
+                <%= request.team.name %>
+              </td>
+              <td>
+                <%= request.team.level_type %>
+              </td>
+              <td>
+                <%= request.display_status %>
+              </td>
+              <% if @recruit.team == current_team %>
+                <td class="text-center">
+                  <%= link_to approve_recruit_request_path(@recruit, request), method: "patch" do %>
+                    <button type="button" class="btn btn-primary" date-toggle="button" aria-pressed="false" autocomplete="off">承認</button>
+                  <% end %>
+                    <%= link_to disapprove_recruit_request_path(@recruit, request), method: "patch" do %>
+                    <button type="button" class="btn btn-primary" date-toggle="button" aria-pressed="false" autocomplete="off">拒否</button>
+                  <% end %>
+                <% end %>  
+              </td>
+            <% end %>  
+          </tr>
+        <% end %>
+      </tbody>  
+    </table>
+  </div>
+</div> 

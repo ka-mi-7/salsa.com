@@ -21,7 +21,7 @@ class RecruitsController < ApplicationController
   end
   
   def show
-    @recuit = Recruit.find(params[:id])
+    @recruit = Recruit.find(params[:id])
     @requests = @recruit.requests
   end
   
@@ -40,10 +40,4 @@ class RecruitsController < ApplicationController
   def recruit_params
     params.require(:recruit).permit(:prefecture, :address, :level_type, :start_at, :end_at, :comment)
   end
-end
-  
-  
-  
-  
-  
 end
