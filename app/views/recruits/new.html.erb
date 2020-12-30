@@ -1,0 +1,55 @@
+<div class="recruits-new">
+  <div class="row">
+    <div class="col mt-4">
+      <%= link_to root_path do %>
+      <button class="float-right mr-3 bg-info btn btn-info">TOPに戻る</button>
+      <% end %>      
+    </div>
+  </div>
+    <div>
+      <div class="text-center mx-auto bg-primary py-2 shadow col-3 rounded mt-3">
+        <h1 class="pt-2"対戦相手募集></h1>
+      </div>
+      <div class="container">
+        <%= form_for(@recruits) do |f| %>
+            <div class="form-group h4 col-7 p-0 text-white">
+              <label for ="pref">都道府県</label>
+                <select class="form-control form-control-lg" id="pref" name="recruit[prefecture]">
+                  <optiion value="">都道府県</optiion>
+                    <% prefectures.each do |p| %>
+                      <option value="<%= p%>"><%= p%></option>
+                    <% end %>
+                </select>
+            </div>
+            <div class="form-group h4 col-7 p-0 text-white">
+              <%= f.text_field :address, class: "form-control form-control-lg", placeholder: "エリア" %>
+            </div>
+            <div class="form-group h4 col-7 p-0 text-white">
+                <label for="exampleFormControlInput1">チームレベル</label>
+              <select class="form-control form-control-lg" id ="pref" name="recruit[lavel_type]">
+                <option value="1">★</ooption>
+                <option value="2">★★</ooption>
+                <option value="3">★★★</ooption>
+                <option value="4">★★★★</ooption>
+                <option value="5">★★★★★</ooption>
+              </select>
+            </div>
+          <div class="form-group h4 col-7 p-0 text-while">
+            <label for="exampleFormControlInput1">開始時間</label>
+            <input type="datetime-lacal" class="form-control form-control-lg" id="exampleFormControlInput1" name="recruit[start_at]">
+          </div>
+          <div class="form-group h4 col-7 p-0 text-while">
+            <label for="exampleFormControlInput1">終了時間</label>
+            <input type="datetime-lacal" class="form-control form-control-lg" id="exampleFormControlInput1" name="recruit[end_at]">
+          </div>
+          <div class="form-group h4 col-10 p-0 text-while">
+            <label for="exampleFormControlInput1">一言コメント</label>
+            <textrarea class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="4" name="recruit[comment]"></textrarea>
+          </div>
+          <div class="col">
+            <button type="submit-col-7" class="float-right btn btn-primary col-2 mt-3 l-3">登録へ</button>
+          </div>
+      <% end %>
+  </div>
+</div>
+  
