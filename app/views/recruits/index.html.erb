@@ -1,2 +1,29 @@
-<h1>Recruits#index</h1>
-<p>Find me in app/views/recruits/index.html.erb</p>
+<div class="home-top">
+  <div class="row mx-1">
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
+      <button type = "button" class="btn btn=sussece mt-3 shadow btn-lg">サイトマップ</button>
+    </div>
+    <div class = "col">
+      <% if logges_in? %>
+        <%= link_to edit_team_path(current_team.id) do %>
+          <button type="button" class="btn btn-sussece ml-3 mt-3 shadow btn-lg">名ページ</button>
+        <% end %>
+      <% else%>
+        <%= link_to new_team_path do %>
+          <button type="buttton" class="btn bnt-sussece ml-3 mt-3 shadow bnt-lg">チーム登録</button>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  
+</div>
