@@ -36,6 +36,11 @@
         <textarea class="form-cotrol form-control-lg", id="examleFormControlTextarea1" rows="4"></textarea>
       </div>
       <div class="form-group h4 col-7 p-0 text-white">
+        <label for="exampleFormControlFile1">チーム写真</label>
+        <%= f.file_field :image, class: 'form-control-file' %>
+      </div>
+      
+      <div class="form-group h4 col-7 p-0 text-white">
         <label class="inputPassword4">Password</label>
           <%= f.password_field :password, class: "form-cotrol form-control-lg",placeholder: "password" %>
       </div>

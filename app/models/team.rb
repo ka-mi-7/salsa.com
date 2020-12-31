@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  mount_uploder :image, ImegeUploder
+  mount_uploader :image, ImageUploader
   
   has_secure_password
   has_many :requests
