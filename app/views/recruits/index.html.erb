@@ -14,9 +14,9 @@
       <button type = "button" class="btn btn=sussece mt-3 shadow btn-lg">サイトマップ</button>
     </div>
     <div class = "col">
-      <% if logges_in? %>
+      <% if logged_in? %>
         <%= link_to edit_team_path(current_team.id) do %>
-          <button type="button" class="btn btn-sussece ml-3 mt-3 shadow btn-lg">名ページ</button>
+          <button type="button" class="btn btn-sussece ml-3 mt-3 shadow btn-lg">マイページ</button>
         <% end %>
       <% else%>
         <%= link_to new_team_path do %>
@@ -24,6 +24,8 @@
         <% end %>
       <% end %>
     </div>
+    <div class="col">
+      
   </div>
   
 </div>

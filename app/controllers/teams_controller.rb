@@ -21,7 +21,7 @@ def edit
   unless params[:id].to_i == current_team.id
     redirect_to root_path
   return
-end
+  end
   
   @team = current_team
 end
