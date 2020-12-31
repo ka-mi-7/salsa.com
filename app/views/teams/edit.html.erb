@@ -25,15 +25,15 @@
       </div>
        <div class="form-group h4 col-7 p-0 text-white">
         <label for="exampleFormControlFile1">メールアドレス</label>
-          <%= f.text_field :email, class: "form-control form-control-lg", placeholder: "メールアドレス" %>
+          <%= f.email_field :email, class: "form-control form-control-lg", placeholder: "メールアドレス" %>
       </div>
        <div class="form-group h4 col-7 p-0 text-white">
         <label for="exampleFormControlFile1">チームレベル</label>
-          <%= f.text_field :level_type, class: "form-control form-control-lg", placeholder: "チームレベル" %>
+          <%= f.number_field :level_type, class: "form-control form-control-lg", placeholder: "チームレベル" %>
       </div>
        <div class="form-group h4 col-7 p-0 text-white">
         <label for="exampleFormControlFile1">チーム写真</label>
-          <%= f.text_field :image, class: "form-control-file" %>
+          <%= f.file_field :image, class: "form-control-file" %>
       </div>
       <button type="submit" class="float-right btn btn-primary col-2 mt-2 l-3">更新</button>
     <% end %>
