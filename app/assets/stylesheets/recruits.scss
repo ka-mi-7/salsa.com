@@ -1,3 +1,11 @@
 // Place all the styles related to the recruits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.recruits-new{
+    background-image: url("/footsal.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  	background-position: center center;
+  	background-attachment: fixed;
+  	padding-bottom: 200px;
+}
