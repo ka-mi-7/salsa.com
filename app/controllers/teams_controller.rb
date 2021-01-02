@@ -49,7 +49,7 @@ end
 
   private
 
-  def team_params
-    params.requre(:team).permit(:team,:leader_name,:phone_number,:email,:level_type,:password,:image)
+  def teams_params
+    params.requre(:team).permit(:team, :leader_name, :phone_number, :email, :level_type, :password, :image)
   end
 end

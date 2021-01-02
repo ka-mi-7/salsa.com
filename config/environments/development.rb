@@ -31,7 +31,24 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  # Print deprecation notices to the Rails logger.
+#deviseが認証用のURLなどを生成するのに必要になる（らしい）
+  config.action_mailer.default_url_options = {  host: 'localhost', port: 3000 }
+  #送信方法を指定（この他に:sendmail/:file/:testなどがあります)
+  config.action_mailer.delivery_method = :smtp
+  #送信方法として:smtpを指定した場合は、このconfigを使って送信詳細の設定を行います
+  config.action_mailer.smtp_settings = {
+    #gmail利用時はaddress,domain,portは下記で固定
+    address:"smtp.gmail.com",
+    domain: 'gmail.com',
+    port:587,
+    #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
+    user_name: 'm.kiyono09@gmail.com',
+    #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
+    password: 'kmtzhgqnnuspsgpt',
+    #パスワードをBase64でエンコード
+    authentication: :login
+
+# Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations.

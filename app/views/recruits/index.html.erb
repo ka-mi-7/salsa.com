@@ -11,16 +11,16 @@
     <div class="col">
     </div>
     <div class="col">
-      <button type = "button" class="btn btn=sussece mt-3 shadow btn-lg">サイトマップ</button>
+      <button type = "button" class="btn btn=success mt-3 shadow btn-lg">サイトマップ</button>
     </div>
     <div class = "col">
       <% if logged_in? %>
         <%= link_to edit_team_path(current_team.id) do %>
-          <button type="button" class="btn btn-sussece ml-3 mt-3 shadow btn-lg">マイページ</button>
+          <button type="button" class="btn btn-success ml-3 mt-3 shadow btn-lg">マイページ</button>
         <% end %>
       <% else%>
         <%= link_to new_team_path do %>
-          <button type="buttton" class="btn bnt-sussece ml-3 mt-3 shadow bnt-lg">チーム登録</button>
+          <button type="buttton" class="btn bnt-success ml-3 mt-3 shadow bnt-lg">チーム登録</button>
         <% end %>
       <% end %>
     </div>
