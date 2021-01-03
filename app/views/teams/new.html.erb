@@ -9,40 +9,40 @@
   <div class="text-center mx-auto bg-primary py-2 shadow col-3 rounded mt-4">
     <h1 class="pt-2">チーム登録</h1>
   </div>
-  <div class="container">
+  <div class="container mt-5">
     <%= form_for(@team) do |f| %>
-      <div class="form-group h4 col-7 p-0 text-white">
+      <div class="form-group h5 col-md-7 p-0 text-white">
         <label for="exampleFormControlInput1">チーム名</label>
-        <%= f.text_field :name, class: 'form-cotrol form-control-lg', placeholder: "チーム名"%>
+        <%= f.text_field :name, class: 'form-control', placeholder: "チーム名"%>
       </div>
-      <div class="form-group h4 col-7 p-0 text-white">
+      <div class="form-group h5 col-md-7 p-0 text-white">
         <label for="exampleFormControlInput1">代表者</label>
-        <%= f.text_field :leader_name, class: "form-cotrol form-control-lg", placeholder: "代表者"%>
+        <%= f.text_field :leader_name, class: "form-control", placeholder: "代表者"%>
       </div>
-      <div class="form-group h4 col-7 p-0 text-white">
+      <div class="form-group h4 col-md-7 p-0 text-white">
         <label for="exampleFormControlInput1">連絡先</label>
-        <%= f.text_field :phone_number, class: "form-cotrol form-control-lg", placeholder: "連絡先"%>
+        <%= f.text_field :phone_number, class: "form-control", placeholder: "連絡先"%>
       </div>
-      <div class="form-group h4 col-7 p-0 text-white">
+      <div class="form-group h4 col-md-7 p-0 text-white">
         <label for="exampleFormControlInput1">メールアドレス</label>
-        <%= f.email_field :email, class: "form-cotrol form-control-lg", placeholder: "メールアドレス"%>
+        <%= f.email_field :email, class: "form-control", placeholder: "メールアドレス"%>
       </div>
-      <div class="form-group h4 col-7 p-0 text-white">
+      <div class="form-group h4 col-md-7 p-0 text-white">
         <label for="exampleFormControlInput1">チームレベル</label>
-        <%= f.number_field :level_type, class: "form-cotrol form-control-lg", placeholder: "チームレベル" %>
+        <%= f.number_field :level_type, class: "form-control", placeholder: "チームレベル" %>
       </div>
-      <div class="form-group h4 col-7 p-0 text-white">
+      <div class="form-group h4 col-md-7 p-0 text-white">
         <label for="exampleFormControlTextarea1">紹介文</label>
-        <textarea class="form-cotrol form-control-lg", id="examleFormControlTextarea1" rows="4"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
-      <div class="form-group h4 col-7 p-0 text-white">
+      <div class="form-group h4 col-md-7 p-0 text-white">
         <label for="exampleFormControlFile1">チーム写真</label>
         <%= f.file_field :image, class: 'form-control-file' %>
       </div>
       
       <div class="form-group h4 col-7 p-0 text-white">
         <label for="inputPassword4">Password</label>
-        <%= f.password_field :password, class: "form-cotrol form-control-lg",placeholder: "password" %>
+        <%= f.password_field :password, class: "form-cotrol form-control",placeholder: "password" %>
       </div>
       <button type="submit" class="float-right btn btn-primary col-2 mt-3 l-3">登録へ</button>
     <% end %>

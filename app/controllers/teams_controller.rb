@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
   end
   
   def create
-    @team = Team.new(team_params)
+    @team=Team.new(team_params)
     if @team.save
       redirect_to root_path
     else
@@ -49,7 +49,7 @@ end
 
   private
 
-  def teams_params
-    params.requre(:team).permit(:team, :leader_name, :phone_number, :email, :level_type, :password, :image)
+  def team_params
+    params.require(:team).permit(:name, :leader_name, :phone_number, :email, :level_type, :password, :image)
   end
 end
