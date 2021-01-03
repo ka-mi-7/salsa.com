@@ -10,21 +10,21 @@
     </div>
     <div class="col">
     </div>
-    <div class="col mt-3 text-light">
-      <h3><%= current_team&.leader_name %>さん</h3>
+    <div class="col-2 mt-3 text-light">
+      <h4><%= current_team&.leader_name %>さん</h4>
     </div>
     <div class="col">
-      <button type="button" class="btn btn-success mt-3 ml-3 shadow btn">サイトマップ</button>
+      <button type="button" class="btn btn-success mt-3 shadow btn">サイトマップ</button>
     </div>
     <div class="col">
       <% if logged_in? %>
-          <%= link_to edit_team_path(current_team.id) do %>
-          <button type="button" class="btn btn-success mt-3 ml-3 shadow btn">マイページ</button>
-          <% end %>
-      <% else%>
-          <%= link_to new_team_path do %>
-          <button type="button" class="btn btn-success ml-3 mt-3 shadow btn">チーム登録</button>
-          <% end %>
+        <%= link_to edit_team_path(current_team.id) do %>
+        <button type="button" class="btn btn-success mt-3 ml-3 shadow btn">マイページ</button>
+        <% end %>
+      <% else %>
+        <%= link_to new_team_path do %>
+        <button type="button" class="btn btn-success ml-3 mt-3 shadow btn">チーム登録</button>
+        <% end %>
       <% end %>
     </div>
     <div class="col">
@@ -61,7 +61,7 @@
               <select class="form-control" id="pref" name="pref">
                 <option value="">都道府県</option>
                 <% prefectures.each do |p| %>
-                  <option value="<%= p%>" <%= (@pref == p) ? 'selected' : '' %>><%= p %></option>
+                  <option value="<%= p %>" <%= (@pref == p) ? 'selected' : '' %>><%= p %></option>
                 <% end %>
               </select> 
           </div>  
@@ -95,7 +95,7 @@
         <div class="col pt-3">
             <button type="submit" class="btn btn-primary t-5">search</button>
         </div>
-          <% end %>
+      <% end %>
     <div class="container">
       <div class="row mt-4 col-3 text-white">
         <h2 class="bg-success p-2">対戦相手募集中</h2>
@@ -115,29 +115,24 @@
             <% @recruits.each do |recruit| %>
               <tr>
                 <td>
-                  <%= link_to recruit_path(recruit) do %>
-                    <%= recruit.team.name %>
-                      <% end %>
-            </td>
-            <td>
-              <% recruit.level_type.times do %>★
-                <% end %>
-            </td>
-            <td>
-              <%= recruit.prefecture %>
-                <%= recruit.address %>
-            </td>
-            <td>
-              <%= recruit.start_at.strftime("%Y/%m/%d %H:%M") %> ~
-                <%= recruit.end_at.strftime("%H:%M") %>
-            </td>
-            <td>
-              <%= recruit.comment %>
-            </td>
-            <td>
-              <%= image_tag(recruit.team.image_url, width: '90px') if recruit.team.image? %>
-            </td>
-          </tr>
+                  <%= link_to recruit_path(recruit) do %><%= recruit.team.name %><% end %>
+                </td>
+                <td>
+                  <% recruit.level_type.times do %>★<% end %>
+                </td>
+                <td>
+                  <%= recruit.prefecture %><%= recruit.address %>
+                </td>
+                <td>
+                  <%= recruit.start_at.strftime("%Y/%m/%d %H:%M") %> ~ <%= recruit.end_at.strftime("%H:%M") %>
+                </td>
+                <td>
+                  <%= recruit.comment %>
+                </td>
+                <td>
+                  <%= image_tag(recruit.team.image_url, width: '90px') if recruit.team.image? %>
+                </td>
+              </tr>
           <% end%>
         </tbody>
       </table>

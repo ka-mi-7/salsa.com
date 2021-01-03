@@ -27,7 +27,7 @@ class RecruitsController < ApplicationController
   
   def create
     @recruit = Recruit.new(recruit_params)
-    @recrutt.team = current_team
+    @recruit.team = current_team
     if @recruit.save
       redirect_to root_path
     else

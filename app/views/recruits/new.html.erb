@@ -12,12 +12,13 @@
       </div>
       <div class="container">
         <%= form_for(@recruits) do |f| %>
+        
             <div class="form-group h4 col-7 p-0 text-white">
               <label for ="pref">都道府県</label>
                 <select class="form-control form-control-lg" id="pref" name="recruit[prefecture]">
-                  <optiion value="">都道府県</optiion>
+                  <option value="">都道府県</option>
                     <% prefectures.each do |p| %>
-                      <option value="<%= p%>"><%= p%></option>
+                      <option value="<%= p %>"><%= p %></option>
                     <% end %>
                 </select>
             </div>
