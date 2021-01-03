@@ -8,7 +8,7 @@
   </div>
     <div>
       <div class="text-center mx-auto bg-primary py-2 shadow col-3 rounded mt-3">
-        <h1 class="pt-2"対戦相手募集></h1>
+        <h1 class="pt-2">対戦相手募集</h1>
       </div>
       <div class="container">
         <%= form_for(@recruits) do |f| %>
@@ -22,6 +22,7 @@
                 </select>
             </div>
             <div class="form-group h4 col-7 p-0 text-white">
+              <label for="exampleFormControlInput1">エリア</label>
               <%= f.text_field :address, class: "form-control form-control-lg", placeholder: "エリア" %>
             </div>
             <div class="form-group h4 col-7 p-0 text-white">
@@ -34,22 +35,22 @@
                 <option value="5">★★★★★</ooption>
               </select>
             </div>
-          <div class="form-group h4 col-7 p-0 text-while">
-            <label for="exampleFormControlInput1">開始時間</label>
-            <input type="datetime-lacal" class="form-control form-control-lg" id="exampleFormControlInput1" name="recruit[start_at]">
+          <div class="form-group h4 col-7 p-0 text-white">
+            <label for="exampleFormControlInput1">開始日時</label>
+            <input type="datetime-local" class="form-control form-control-lg" id="exampleFormControlInput1" name="recruit[start_at]">
           </div>
-          <div class="form-group h4 col-7 p-0 text-while">
-            <label for="exampleFormControlInput1">終了時間</label>
-            <input type="datetime-lacal" class="form-control form-control-lg" id="exampleFormControlInput1" name="recruit[end_at]">
+          <div class="form-group h4 col-7 p-0 text-white">
+            <label for="exampleFormControlInput1">終了日時</label>
+            <input type="datetime-local" class="form-control form-control-lg" id="exampleFormControlInput1" name="recruit[end_at]">
           </div>
-          <div class="form-group h4 col-10 p-0 text-while">
-            <label for="exampleFormControlInput1">一言コメント</label>
-            <textrarea class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="4" name="recruit[comment]"></textrarea>
+          <div class="form-group h4 col-10 p-0 text-white">
+            <label for="exampleFormControlTextarea1">一言コメント</label>
+            <textarea class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="4" name="recruit[comment]"></textarea>
           </div>
           <div class="col">
             <button type="submit-col-7" class="float-right btn btn-primary col-2 mt-3 l-3">登録へ</button>
           </div>
-      <% end %>
+        <% end %>
   </div>
 </div>
   
