@@ -7,7 +7,7 @@ class RecruitsController < ApplicationController
     
     @recruits = Recruit.all
     
-    @recruits = @recruits.where("comment like ?","%#{params[:kerword]}%") if @kerword.present?
+    @recruits = @recruits.where('comment like ?',"%#{params[:keyword]}%") if @keyword.present?
     @recruits = @recruits.where(prefecture: params[:pref]) if @pref.present?
     @recruits = @recruits.where(start_at: @date.to_date.beginning_of_day..@date.to_date.end_of_day) if @date.present?
     @recruits = @recruits.where(level_type: params[:level_type]) if @level_type.present?
@@ -17,7 +17,7 @@ class RecruitsController < ApplicationController
   end
   
   def new
-    @recruits = Recruit.new
+    @recruit = Recruit.new
   end
   
   def show

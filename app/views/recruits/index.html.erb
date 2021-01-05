@@ -10,20 +10,17 @@
     </div>
     <div class="col">
     </div>
-    <div class="col-2 mt-3 text-light">
-      <h4><%= current_team&.leader_name %>さん</h4>
-    </div>
     <div class="col">
-      <button type="button" class="btn btn-success mt-3 shadow btn">サイトマップ</button>
+      <button type="button" class="btn-success mt-3 shadow btn">サイトマップ</button>
     </div>
     <div class="col">
       <% if logged_in? %>
         <%= link_to edit_team_path(current_team.id) do %>
-        <button type="button" class="btn btn-success mt-3 ml-3 shadow btn">マイページ</button>
+        <button type="button" class="btn-success mt-3 ml-3 shadow btn">マイページ</button>
         <% end %>
       <% else %>
         <%= link_to new_team_path do %>
-        <button type="button" class="btn btn-success ml-3 mt-3 shadow btn">チーム登録</button>
+        <button type="button" class="btn-success ml-3 mt-3 shadow btn">チーム登録</button>
         <% end %>
       <% end %>
     </div>
@@ -45,7 +42,9 @@
   <div class="row mt-5">
     <div class="col-9">
     </div>
-    
+  <div class="col-2 mt-3 text-light">
+    <h4><%= current_team&.leader_name %></h4>
+  </div>
   </div>
   <div class="text-center text-white">
     <h1 class="display-1 mt-5">Salsa.com</h1>
@@ -88,7 +87,7 @@
         <div class="col">
             <div class="form-group text-white">
               <label for="kayword">キーワード</label>
-              <%= text_field_tag :kerword, @kerword, {class: 'form-control'}%>
+              <%= text_field_tag :kerword, @keyword, {class: 'form-control'}%>
             </div>
         </div>
                   
