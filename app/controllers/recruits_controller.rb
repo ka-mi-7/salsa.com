@@ -31,7 +31,7 @@ class RecruitsController < ApplicationController
     if @recruit.save
       redirect_to root_path
     else
-      render:new
+      render :new
     end
   end
   
